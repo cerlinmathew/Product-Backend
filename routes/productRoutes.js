@@ -8,6 +8,7 @@ router.get("/", async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM products ORDER BY product_id DESC");
     res.status(200).json(result.rows);
+    console.log()
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Failed to fetch products" });
